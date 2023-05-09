@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LuckyCarp</title>
+  
+  <subtitle>A carp swimming in the ocean of knowledge.</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-05-08T10:16:20.928Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Yang Li</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Build your first blog with Hexo</title>
+    <link href="http://example.com/firstblog/"/>
+    <id>http://example.com/firstblog/</id>
+    <published>2023-05-08T07:51:32.000Z</published>
+    <updated>2023-05-08T10:16:20.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>2022年之前的blog收录在gitee pages，网站为：<code>https://liyang199802.gitee.io/</code>，仍可访问。但是由于gitee现在对文件中的敏感词汇审查过于严格，导致检查文章中词汇耗费了大量时间，因此，今年开始使用github pages来维护个人blog，使用hexo构建个人网站的方法与使用gitee pages基本一致。</p><p>另一方面，作为一个小白，搭建的blog很丑，虽然没有人看，自己记录也会影响心情。看到很多优质博客，决定改进一下自己的blog。</p><hr><h3 id="使用github-page-Hexo构建blog"><a href="#使用github-page-Hexo构建blog" class="headerlink" title="使用github page+Hexo构建blog"></a>使用github page+Hexo构建blog</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;2022年之前的blog收录在gitee pages，网站为：&lt;code&gt;https://liyang199802.gitee.io/&lt;/code&gt;，仍可访问。但是由于gitee现在对文件中的敏感词汇审查过于严格，导致检查文章中词汇耗费了大量时间，因此，今年开始使用gith</summary>
+      
+    
+    
+    
+    <category term="Technology" scheme="http://example.com/categories/Technology/"/>
+    
+    
+    <category term="Tool" scheme="http://example.com/tags/Tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/hello-world/"/>
+    <id>http://example.com/hello-world/</id>
+    <published>2023-05-08T07:34:03.608Z</published>
+    <updated>2023-05-08T07:34:03.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a class=&quot;link&quot;   href=&quot;https://hexo.io/&quot; &gt;Hexo&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;! This is your very first post. Che</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
