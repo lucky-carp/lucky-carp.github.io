@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-09T08:34:18.146Z</updated>
+  <updated>2023-05-09T11:09:01.149Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>clickhouse-base</title>
+    <link href="http://example.com/clickhouse-base/"/>
+    <id>http://example.com/clickhouse-base/</id>
+    <published>2023-05-09T11:07:26.000Z</published>
+    <updated>2023-05-09T11:09:01.149Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇记录了clickhouse的基础知识，用于回顾。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本篇记录了clickhouse的基础知识，用于回顾。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Technology" scheme="http://example.com/categories/Technology/"/>
+    
+    
+    <category term="knowledge" scheme="http://example.com/tags/knowledge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fitness0508</title>
+    <link href="http://example.com/fitness0508/"/>
+    <id>http://example.com/fitness0508/</id>
+    <published>2023-05-09T10:28:32.000Z</published>
+    <updated>2023-05-09T11:06:37.307Z</updated>
+    
+    <content type="html"><![CDATA[<p>私教课的第二节，今天练胸！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;私教课的第二节，今天练胸！&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Life" scheme="http://example.com/categories/Life/"/>
+    
+    
+    <category term="Fitness" scheme="http://example.com/tags/Fitness/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美食分享——天宝兄弟罗氏虾</title>
+    <link href="http://example.com/roche-shrimp/"/>
+    <id>http://example.com/roche-shrimp/</id>
+    <published>2023-05-09T10:19:36.000Z</published>
+    <updated>2023-05-09T10:26:53.414Z</updated>
+    
+    <content type="html"><![CDATA[<p>天宝兄弟的罗氏虾在长沙这个遍地小龙虾的地盘竟然能做到一绝，让我跟鹿崽流连忘返，必有它的绝佳秘方，但是一盘一斤的罗氏虾能卖到228，活虾也才80一斤，为了减少消费，拴住老婆的胃，这菜我必须学会！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;天宝兄弟的罗氏虾在长沙这个遍地小龙虾的地盘竟然能做到一绝，让我跟鹿崽流连忘返，必有它的绝佳秘方，但是一盘一斤的罗氏虾能卖到228，活虾也才80一斤，为了减少消费，拴住老婆的胃，这菜我必须学会！&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Life" scheme="http://example.com/categories/Life/"/>
+    
+    
+    <category term="Cooking" scheme="http://example.com/tags/Cooking/"/>
+    
+  </entry>
   
   <entry>
     <title>Keep——A simple and elegant theme for Hexo.</title>
