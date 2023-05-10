@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/luckycarp.jpg","favicon":"/images/carp.jpg","avatar":"/images/wukong.jpg","font_size":"18px","font_family":"STKaiti","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg6.jpg","description":"Man, the greatest enemy is himself. || 人，最大的敌人是自己。","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"AgmM51nJqi5TBKHdQtgA3kQ3-gzGzoHsz","appkey":"6DYvivYvcfUgU4DbDF6R8O5g","server_urls":null,"placeholder":"Post your comments!"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Junior","Intermediate","Senior","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"left","copyright_info":true},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/luckycarp.jpg","favicon":"/images/carp.jpg","avatar":"/images/wukong.jpg","font_size":"18px","font_family":"STKaiti","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg6.jpg","description":"Man, the greatest enemy is himself. || 人，最大的敌人是自己。","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"AgmM51nJqi5TBKHdQtgA3kQ3-gzGzoHsz","appkey":"6DYvivYvcfUgU4DbDF6R8O5g","server_urls":null,"placeholder":"Post your comments!"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["Junior","Intermediate","Senior","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"left","copyright_info":true},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
     KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
     KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
@@ -214,7 +214,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-05-09 16:34:18</span>
+        <span class="pc">2023-05-10 10:33:44</span>
     </span>
     
     
@@ -245,12 +245,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>43 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.7k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
         </span>
     
     
@@ -268,7 +268,186 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p><a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >Themes | Hexo<i class="fas fa-external-link-alt"></i></a> 提供了很多网站主题，Keep主题是我目前最喜欢，也最适合新手的一个主题（因为它的文档真的很详细！）</p>
+                <p><a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >Themes | Hexo<i class="fas fa-external-link-alt"></i></a> 提供了很多网站主题，Keep主题是我目前最喜欢，也我认为最适合新手的一个主题（因为它的文档真的很详细！）</p>
+<p>本篇博客主要记录了我使用keep主题时的配置，hexo的主题自由度很高，大家也可以根据个人喜好在此基础上构建漂亮的blog。</p>
+<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>在使用 Keep 主题之前，如果你对 Hexo 搭建个人博客没有任何经验，建议你可以先简要阅读 <code>「 Easy Hexo 团队 」</code>撰写的 <a class="link"   target="_blank" rel="noopener" href="https://easyhexo.com/" >Hexo 教程<i class="fas fa-external-link-alt"></i></a>，能帮助你快速入门 Hexo。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li><p>如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 NPM <strong>（推荐）</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-site</span><br><span class="line">npm install hexo-theme-keep</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或者使用 Git 克隆整个仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-site</span><br><span class="line">git clone https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>Keep 主题安装完成后，在 Hexo 配置文件（站点配置文件） <code>_config.yml</code> 中将 <code>theme</code> 设置为 <code>keep</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: keep</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：使用 Keep 主题必须确保你的 Node.js 版本 &gt;&#x3D; 14.0，当你的 Hexo 项目运行时报错或发出警告，请注意升级你的 Node.js 版本。</p>
+</blockquote>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><p>Keep 主题不定期发布新版本，你可以通过如下命令更新。</p>
+<ul>
+<li><p>通过 NPM 安装最新版本 <strong>（推荐）</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-site</span><br><span class="line">npm install hexo-theme-keep@latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过 Git 更新到最新的 master 分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/keep</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="Keep-主题快速启动模板"><a href="#Keep-主题快速启动模板" class="headerlink" title="Keep 主题快速启动模板"></a>Keep 主题快速启动模板</h3><p>Keep 主题官方提供了基于 Hexo 博客框架的快速启动模板，启动模板中的 Hexo 配置文件 <code>_config.yml</code> 和主题配置文件 <code>source/_data/keep.yml</code> 已预设和启用一些比较实用的基础配置项。</p>
+<p>我们可以直接拿来快速创建一个 Hexo 博客项目，无需其他操作，开箱即用，然后在此模板基础上配置出属于自己的独一无二的 Keep 主题博客。<strong>（非常适合新手同学）</strong></p>
+<h4 id="下载模板"><a href="#下载模板" class="headerlink" title="下载模板"></a>下载模板</h4><p>使用 Git 克隆：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-keep/hexo-theme-keep-starter</span><br></pre></td></tr></table></figure>
+
+<p>直接下载：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/theme-keep/hexo-theme-keep-starter/archive/refs/heads/main.zip" >点击这里下载 &gt;&gt; Keep 主题快速启动模板<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><p>「 Keep 主题快速启动模板 」下载完成之后，需要安装项目依赖才能成功运行起来。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo-theme-keep-starter</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h4><p>项目依赖安装成功之后，使用如下命令即可运行项目，随即在浏览器上看到 Keep 主题的 Hexo 博客。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>至此，我们可以直接在此模板上自由配置 Keep 主题，最后编译生成静态文件 -&gt; 部署发布。</p>
+<p><strong>注意：为确保你的主题配置项完全生效，请在 <code>source/_data/keep.yml</code> 路径下进行主题配置。</strong></p>
+<blockquote>
+<p>请勿随意移动 <code>keep.yml</code> 文件的路径，确保 <code>keep.yml</code> 在 <code>source/_data/</code> 路径下。<br>请勿随意更改 <code>keep.yml</code> 文件中的配置项字段名称，填写配置项之后，确保缩进是否正确。</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译生成静态文件</span></span><br><span class="line">npm run build</span><br><span class="line"><span class="comment"># 部署</span></span><br><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>我们现在已经可以使用keep主题作为我们网站的样式了，接下来对详细配置项进行说明，从而构建更加符合个人审美的网站，毕竟我们现在做的个人博客也是为了让自己开心嘛！</p>
+<h3 id="base-info"><a href="#base-info" class="headerlink" title="base_info"></a>base_info</h3><p><code>base_info</code> 配置项用于设置你的博客站点基本信息，请正确填写。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">base_info:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Keep</span> <span class="string">Theme</span></span><br><span class="line">  <span class="attr">author:</span> <span class="string">Keep</span> <span class="string">Team</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://keep.xpoet.cn/</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>title</strong></p>
+<p><code>title</code> 用于设置博客站点的<strong>标题</strong>，将显示在网站的头部，如下图。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="/keep-theme/image-20230510101516923.png"
+                      alt="image-20230510101516923"
+                ></p>
+</li>
+<li><p><strong>author</strong></p>
+<p><code>author</code> 用于设置博客站点的<strong>作者昵称</strong>，显示在<strong>网站底部</strong>、<strong>文章内容页</strong>和<strong>版权信息</strong>，如下图。</p>
+<ul>
+<li><p>网站底部</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="/keep-theme/image-20230510101617772.png"
+                      alt="image-20230510101617772"
+                ></p>
+</li>
+<li><p>文章内容页</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="/keep-theme/image-20230510101643540.png"
+                      alt="image-20230510101643540"
+                ></p>
+</li>
+<li><p>版本信息</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="/keep-theme/image-20230510101710701.png"
+                      alt="image-20230510101710701"
+                ></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><p><code>style</code> 配置项用于自定义配置 Keep 主题的样式，通过这里你可以配置出属于你自己独一无二的 Keep 主题博客站点。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">style:</span></span><br><span class="line">  <span class="attr">primary_color:</span> <span class="string">&quot;#0066cc&quot;</span></span><br><span class="line">  <span class="attr">logo:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="attr">favicon:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">/images/avatar.svg</span></span><br><span class="line">  <span class="attr">font_size:</span></span><br><span class="line">  <span class="attr">font_family:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">hover:</span></span><br><span class="line">    <span class="attr">shadow:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">scale:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">first_screen:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">header_transparent:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">background_img:</span> <span class="string">/images/bg.svg</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">Keep</span> <span class="string">writing</span> <span class="string">and</span> <span class="string">Keep</span> <span class="string">loving.</span></span><br><span class="line">    <span class="attr">font_color:</span></span><br><span class="line">    <span class="attr">hitokoto:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">scroll:</span></span><br><span class="line">    <span class="attr">progress_bar:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">percent:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>primary_color</strong></p>
+<p><code>primary_color</code> 用于设置博客站点主题色，支持 <strong>十六进制</strong>、<strong>rgb</strong> 和 <strong>rgba</strong> 颜色格式。<br>例如：<code>#0066cc</code>、<code>rgb(0, 102, 204)</code> 和 <code>rgba(0, 102, 204, 0.8)</code>、。</p>
+<p>获取配色推荐：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://flatuicolors.com/" >Flat UI Colors<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.bootcss.com/p/websafecolors" >Web 安全色<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://color.adobe.com/zh/create/color-wheel" >Adobe Color CC<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>logo</strong></p>
+<p><code>logo</code> 用于设置博客站点头部 LOGO，如下图。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="/keep-theme/image-20230510101839373.png"
+                      alt="image-20230510101839373"
+                ></p>
+<p><strong>关于图片的设置：</strong></p>
+<p>你可以使用 <strong>本地图片</strong>（即存储 <code>keep/source/images/</code> 路径下的图片）或 <strong>图片外链 URL</strong>（适用于使用 NPM 安装的 Keep主题）。</p>
+<ul>
+<li><p>本地图片</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logo:</span> <span class="string">/images/logo.svg</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片外链（推荐）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logo:</span> <span class="string">https://cdn.staticaly.com/gh/XPoet/image-hosting@master/hexo-theme-keep/logo.7ihwqpf2atg0.svg</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>图床推荐</p>
+<p>大家可以使用免费的图床工具 <strong>PicX</strong> 来存储自己的图片并生成图片外链。<br>PicX: <a class="link"   target="_blank" rel="noopener" href="https://github.com/XPoet/picx" >https://github.com/XPoet/picx<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+</li>
+<li><p>往下的 <code>favicon</code>、<code>avatar</code>、<code>favicon</code>、<code>first_screen.background_img</code> 等配置项的图片设置均使用以上方式。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>favicon</strong></p>
+<p> 用于设置博客站点 favicon 图标。</p>
+</li>
+<li><p><strong>avatar</strong> </p>
+<p>用于设置博客站点<strong>作者头像</strong>，将显示在文章内容页。</p>
+</li>
+<li><p><strong>font_size</strong></p>
+<p><code>font_size</code> 设置博客站点的初始<strong>字体大小</strong>，单位必须为 <strong><code>px</code></strong> 。该配置项可以不填，如果不填将使用 Keep 主题内置的初始字体大小 <code>15.2px</code> 。</p>
+</li>
+<li><p><strong>font_family</strong></p>
+<p><code>font_family</code> 设置博客站点的<strong>字体样式</strong>，该配置项可以不填，如果不填将使用 Keep 主题内置的字体样式。</p>
+<blockquote>
+<p><code>font_family</code> 同 CSS 设置 <code>font-family</code> 规则一致</p>
+</blockquote>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置：楷体</span></span><br><span class="line"><span class="attr">font_family:</span> <span class="string">STKaiti</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置：宋体，黑体</span></span><br><span class="line"><span class="attr">font_family:</span> <span class="string">STSong,</span> <span class="string">STHeiti</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>hover</strong></p>
+<p><code>hover</code> 用于设置<strong>鼠标悬浮时的样式</strong>（例如悬浮在主页文章模块、TOC 目录模块、按钮等），可分别开启 <code>shadow</code> 和 <code>scale</code> 效果。</p>
+</li>
+<li><p><strong>first_screen</strong></p>
+<p><code>first_screen</code> 是 Keep 主题 <code>v3.0.0</code> 新增的<strong>首屏模块</strong>，开启后将显示在博客站点首页的第一视野（故称<strong>首屏</strong>）</p>
+</li>
+<li><p><strong>header_transparent</strong></p>
+<p><code>header_transparent</code> 用于在首屏模块开启状态下<strong>设置头部是否透明</strong>，可选值：<code>true</code> 或 <code>false</code>。</p>
+</li>
+<li><p><strong>background_img</strong></p>
+<p><code>background_img</code> 设置首屏背景图片，可使用 <strong>本地图片</strong> 或 <strong>图片外链 URL</strong>。</p>
+<blockquote>
+<p>这里建议大家的高清背景图片用 <a class="link"   target="_blank" rel="noopener" href="https://tinypng.com/" >TinyPNG<i class="fas fa-external-link-alt"></i></a> 压缩一下后再使用，可有效提高页面加载速度。</p>
+</blockquote>
+</li>
+<li><p><strong>description</strong></p>
+<p><code>description</code> 设置首屏描述，支持设置两行，换行符 **<code>||</code>**。</p>
+</li>
+<li><p><strong>font_color</strong></p>
+<p><code>font_color</code> 设置首屏描述的字体颜色，可以为空，不填则使用 Keep 主题内置颜色。</p>
+</li>
+<li><p><strong>hitokoto</strong></p>
+<p><code>hitokoto</code> 是 Keep 主题 <code>v3.4.6</code>新增的首屏描述<strong>一言</strong>功能，可选值：<code>true</code> 或 <code>false</code>。</p>
+<p>开启之后，在<strong>每次进入博客站点</strong>或<strong>刷新页面</strong>都会自动呈现出不一样的首屏描述。</p>
+</li>
+<li><p><strong>scroll</strong></p>
+<p><code>scroll</code> 设置页面滚动时的样式。</p>
+</li>
+<li><p><strong>progress_bar</strong></p>
+<p><code>progress_bar</code> 页面滚动时在网站<strong>顶部</strong>显示滚动<strong>进度条</strong>，可选值：<code>true</code> 或 <code>false</code>。</p>
+</li>
+<li><p><strong>percent</strong></p>
+<p><code>percent</code> 页面滚动时在<strong>右下角</strong>工具栏显示滚动<strong>百分比</strong>，可选值：<code>true</code> 或 <code>false</code>。</p>
+</li>
+</ul>
 
             </div>
 
@@ -441,7 +620,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">安装主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">1.3.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keep-%E4%B8%BB%E9%A2%98%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text">Keep 主题快速启动模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.1.</span> <span class="nav-text">下载模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">2.2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.</span> <span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">配置主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-info"><span class="nav-number">3.</span> <span class="nav-text">base_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#style"><span class="nav-number">4.</span> <span class="nav-text">style</span></a></li></ol>
     </div>
 </div>
 
