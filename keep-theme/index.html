@@ -214,7 +214,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-05-10 11:31:00</span>
+        <span class="pc">2023-05-10 11:56:41</span>
     </span>
     
     
@@ -245,12 +245,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.3k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>8 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>11 Mins</span>
         </span>
     
     
@@ -462,7 +462,87 @@
 <p><code>percent</code> 页面滚动时在<strong>右下角</strong>工具栏显示滚动<strong>百分比</strong>，可选值：<code>true</code> 或 <code>false</code>。</p>
 </li>
 </ul>
+<hr>
+<h3 id="menu"><a href="#menu" class="headerlink" title="menu"></a>menu</h3><p><code>menu</code> 用于配置博客站点的<strong>头部导航菜单</strong>，如需新增导航菜单，按配置文件里面的格式填写即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">/</span>                         <span class="comment"># 首页</span></span><br><span class="line">  <span class="attr">Archives:</span> <span class="string">/archives</span>             <span class="comment"># 归档</span></span><br><span class="line">  <span class="comment"># Tags: /tags                   # 标签</span></span><br><span class="line">  <span class="comment"># Categories: /categories       # 分类</span></span><br><span class="line">  <span class="comment"># Links: /links                 # 链接</span></span><br><span class="line">  <span class="comment"># About: /about                 # 关于</span></span><br><span class="line">  <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
 
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230510/image-20230510113901444.6e27uayqgk00.webp"
+                     
+                ></p>
+<p><code>menu</code> 导航菜单可以配置两个跳转方式：</p>
+<ol>
+<li>跳转博客到内部页面。</li>
+<li>跳转到外部第三方网站。</li>
+</ol>
+<h4 id="跳转内部页面"><a href="#跳转内部页面" class="headerlink" title="跳转内部页面"></a>跳转内部页面</h4><p>Hexo 项目在初始（默认）状态下并没有 Categories（分类）、Tags（标签）、About（关于）、Links（友链）等，这些都需要自己<strong>先手动创建，再配置使用</strong>，否则无效。</p>
+<p>我们以创建「 About（关于）」页面为例：</p>
+<ol>
+<li><p>在 Hexo 项目根目录下执行命令 <code>hexo new page about</code> ，即可在 <code>source</code> 目录下生成 about 文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 Keep 主题配置文件 <code>_config.yml</code> 的 <code>menu</code> 配置项下添加 **<code>About: /about</code>**。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">Archives:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="comment"># Categories: /categories</span></span><br><span class="line">  <span class="comment"># Tags: /tags</span></span><br><span class="line">  <span class="comment"># Links: /links</span></span><br><span class="line">  <span class="attr">About:</span> <span class="string">/about</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开 Hexo 项目下 <code>/source/about/index.md</code> 文件，填写 Adout 页面的内容。 支持 Markdown 和 HTML 格式；</p>
+<p>参考如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">about</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2020-03-19 14:59:53</span></span><br><span class="line"><span class="attr">comment:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="comment">## About me</span></span><br><span class="line"></span><br><span class="line"><span class="string">XPoet「</span> <span class="string">Keep</span> <span class="string">core</span> <span class="string">developer</span> <span class="string">」...</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示</p>
+<p><code>comment: true</code> 表示该页面<strong>开启评论功能</strong>。（默认不开启评论）</p>
+<p>特别注意</p>
+<p>创建页面时自动生成的 <code>title</code> 属性不要修改！不要删除！<br>例如：<code>title: about</code> 不能修改！不能删除！</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="跳转外部网站"><a href="#跳转外部网站" class="headerlink" title="跳转外部网站"></a>跳转外部网站</h4><p>如果要实现在导航栏点击菜单时跳转到第三方网站，只需把配置项的值填写为第三方网站的 URL 即可。 例如：在导航栏配置跳转到 Baidu 网站的菜单。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Baidu:</span> <span class="string">https://www.baidu.com/</span></span><br><span class="line">  <span class="string">百度:</span> <span class="string">https://www.baidu.com/</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="social-contact"><a href="#social-contact" class="headerlink" title="social_contact"></a>social_contact</h3><p><code>social_contact</code> 在首屏里面配置第三方社交链接。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social_contact:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">links:</span></span><br><span class="line">    <span class="attr">github:</span>          <span class="comment"># GitHub</span></span><br><span class="line">    <span class="attr">weixin:</span>          <span class="comment"># WeChat</span></span><br><span class="line">    <span class="attr">qq:</span>              <span class="comment"># QQ</span></span><br><span class="line">    <span class="attr">weibo:</span>           <span class="comment"># WeiBo</span></span><br><span class="line">    <span class="attr">zhihu:</span>           <span class="comment"># ZhiHu</span></span><br><span class="line">    <span class="attr">twitter:</span>         <span class="comment"># Twitter</span></span><br><span class="line">    <span class="attr">facebook:</span>        <span class="comment"># Facebook</span></span><br><span class="line">    <span class="attr">email:</span>           <span class="comment"># Email</span></span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230510/image-20230510115310335.tlsh30o1mg0.webp"
+                     
+                ></p>
+<ul>
+<li><p><strong>enable</strong>：<code>enable</code> 设置是否开启显示第三方社交链接，可选值：<code>true</code> 或 <code>false</code>。</p>
+</li>
+<li><p><strong>links</strong>：在 <code>links</code> 下方的第三方社交平台配置项填写自己的 URL。</p>
+<ul>
+<li><p><strong>点击跳转外部链接</strong></p>
+<p>当我们在 <code>links</code> 的配置项里填写的是 URL 时，点击对应图标时会直接跳转到外部 URL。</p>
+<p>配置示例：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">github:</span> <span class="string">https://github.com/lucky-carp</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>点击悬浮打开图片</strong></p>
+<p>当我们需要在点击图标时悬浮打开图片，例如点击<strong>微信</strong>图标，悬浮打开微信<strong>二维码</strong>时，那么需要给 URL 加上前缀 **<code>img | </code>**。</p>
+<blockquote>
+<p>此处的 URL 必须是图片外链</p>
+</blockquote>
+<p>配置示例：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">weixin:</span> <span class="string">img</span> <span class="string">|</span> <span class="string">https://x.com/images/wechat.png</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>自定义配置</strong></p>
+<p>Keep 主题内置 Font Awesome <code>v6.2.0</code> 免费版图标，基本已覆盖我们所需的全部图标。</p>
+<p>如果要自定义<strong>更改图标</strong>或<strong>添加其他第三方链接</strong>，例如：添加 Instagram</p>
+<ol>
+<li><p>在 <a class="link"   target="_blank" rel="noopener" href="https://fontawesome.com/icons?d=gallery&s=solid&m=free" >Font Awesome<i class="fas fa-external-link-alt"></i></a> 搜索 Instagram 图标。</p>
+</li>
+<li><p>填写图标名（如上图），添加到主题配置文件 <code>_config.yml</code> 的 <code>social_contact.links</code> 配置项里面。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social_contact:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">links:</span></span><br><span class="line">    <span class="attr">instagram:</span> <span class="string">https://www.instagram.com/xxxxxxxx</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="home-article"><a href="#home-article" class="headerlink" title="home_article"></a>home_article</h3>
             </div>
 
             
@@ -634,7 +714,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">安装主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">1.3.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keep-%E4%B8%BB%E9%A2%98%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text">Keep 主题快速启动模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.1.</span> <span class="nav-text">下载模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">2.2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.</span> <span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">配置主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-info"><span class="nav-number">3.</span> <span class="nav-text">base_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#style"><span class="nav-number">4.</span> <span class="nav-text">style</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">安装主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">1.3.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keep-%E4%B8%BB%E9%A2%98%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text">Keep 主题快速启动模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.1.</span> <span class="nav-text">下载模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">2.2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.3.</span> <span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">配置主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-info"><span class="nav-number">3.</span> <span class="nav-text">base_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#style"><span class="nav-number">4.</span> <span class="nav-text">style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#menu"><span class="nav-number">5.</span> <span class="nav-text">menu</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E5%86%85%E9%83%A8%E9%A1%B5%E9%9D%A2"><span class="nav-number">5.1.</span> <span class="nav-text">跳转内部页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E5%A4%96%E9%83%A8%E7%BD%91%E7%AB%99"><span class="nav-number">5.2.</span> <span class="nav-text">跳转外部网站</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#social-contact"><span class="nav-number">6.</span> <span class="nav-text">social_contact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#home-article"><span class="nav-number">7.</span> <span class="nav-text">home_article</span></a></li></ol>
     </div>
 </div>
 
