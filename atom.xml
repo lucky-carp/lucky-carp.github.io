@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-11T06:21:48.975Z</updated>
+  <updated>2023-05-19T07:11:24.029Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何应用对第三方库的改动？</title>
+    <link href="http://example.com/diffpatch/"/>
+    <id>http://example.com/diffpatch/</id>
+    <published>2023-05-19T07:09:34.000Z</published>
+    <updated>2023-05-19T07:11:24.029Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>microsim项目中需要将硬件每一拍的运行日志数据保存下来，后续对其进行分析。使用的日志库是spdlog，版本是1.9.2。本项目希望借助一个高性能的数据库来存储日志数据，选取了clickhouse作为数据服务载体。但是由于日志库提供的接口有限，因此需要自己实现一个专门用于写入clickhouse数据库的日志接口。现已完成，具体实现为了database_sink类。对于spdlog的改动主要为：新增了database_sink.h文件，对stdout_color_sinks-inl.h文件进行了改动。</p><p>为了后续使用spdlog库时可以基于稳定版本spdlog-1.9.2来实现，因此需要采用补丁的形式，将改动应用到spdlog库中。</p><hr><h4 id="主要技术"><a href="#主要技术" class="headerlink" title="主要技术"></a>主要技术</h4><ul><li><strong>spdlog：</strong>spdlog是一个快速的异步日志库，用于C ++。它可以记录到控制台，文件，多个文件，Syslog，网络和其他流。spdlog旨在既能够满足高性能的需求，又能够简单易用。它的特点包括高吞吐量，低延迟，线程安全，支持多种格式（例如日志级别，日期和时间戳，线程ID等），以及支持动态日志分级。此外，它支持多个前端和后端，可以轻松地定制日志的格式和存储位置。</li><li><strong>clickhouse：</strong>clickhouse-cpp是一个轻量级的C ++客户端库，用于连接和与ClickHouse数据库交互。ClickHouse是一个开源的列式数据库管理系统，主要用于在线分析处理（OLAP）应用程序。clickhouse-cpp库提供了几个功能，包括连接到ClickHouse服务器，执行查询语句，获取查询结果等。它旨在提供高效的性能，可靠性和易于使用的API。它支持异步和同步查询，可以轻松地集成到现有的C ++应用程序中。</li><li><strong>diff命令：</strong>diff命令是一个UNIX和类UNIX操作系统中的命令行工具，用于比较两个文件或目录之间的差异。它会逐行比较两个文件的内容，并显示出它们之间的不同点。diff命令通常与其他工具（例如patch和git）一起使用，以便对文件进行修改、合并和版本控制等操作。diff命令可以在不同的比较模式下运行，例如逐字、逐行或上下文模式，这些模式可以根据需要进行调整。除了比较文件、目录以外，diff命令还可以用于比较文本字符串或STDIN中的内容。</li><li><strong>patch命令：</strong>patch命令是一个UNIX和类UNIX操作系统中的命令行工具，用于将差异文件（patch文件）应用于源文件，以更新或修改源文件。差异文件（patch文件）是由diff命令生成的一种文件，其中包含了源文件和目标文件之间的更改。patch命令可以根据差异文件（patch文件）中的信息自动更新源文件，或者可以通过手动选择或编辑来更新源文件。patch命令通常用于应用软件或系统的更新和修补程序。它的基本用法是将差异文件（patch文件）作为输入，然后将其应用于某个或多个源文件或目录。</li></ul><hr><h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><ol><li><p>首先需要将spdlog-1.9.2.tar.gz解压缩：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxf spdlog-1.9.2.tar.gz</span><br></pre></td></tr></table></figure><p>生成了spdlog-1.9.2文件夹</p></li><li><p>因为改动位于lib下的spdlog&#x2F;include&#x2F;spdlog&#x2F;sinks文件夹中，因此使用diff比较两个文件夹，生成.patch文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -Naur spdlog-1.9.2/include/spdlog/sinks/ /lib/spdlog/include/spdlog/sinks &gt; spdlog-db.patch</span><br></pre></td></tr></table></figure><p>这样将在当前目录下生成一个 spdlog-db.patch文件。</p><ul><li><code>-N</code>选项指示diff在两个不相交的文件中查找范围，而不是将缺少的文件视为空文件。这样可以避免误报删除的文件中存在的某些差异。</li><li><code>-a</code>选项告诉diff将二进制文件视为文本文件，并对其执行比较。</li><li><code>-u</code>选项生成”unified diff”格式的输出，显示两个文件的整个内容，并将它们之间的不同点以一种易于理解的方式显示出来。</li><li><code>-r</code>选项允许diff递归地比较目录和它们的内容。</li></ul><p>此格式的输出通常用于比较文件和目录，并用于在软件开发过程中创建补丁和应用程序更新。</p></li><li><p>将.patch文件应用到原来的spdlog-1.9.2库中</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -p4 -d spdlog-1.9.2/include/spdlog/sinks/ ./spdlog-db.patch</span><br></pre></td></tr></table></figure><ul><li><code>-p4</code>指定patch命令应该忽略路径前缀，即将路径前缀中的4个（分隔符分隔的）部分（例如<code>a/b/c/d</code>）逐个剥离，因此patch文件中应用修补程序时的路径会受到影响。实际上，它在路径中自动跳过3个组件。</li><li><code>-d</code>选项用于指定patch文件中要应用补丁的目录，因此在应用补丁程序时，patch命令会切换到指定的目录，以便在该目录中执行文件操作。通常，此选项与-p选项结合使用，以确保patch命令在正确的位置查找文件。</li></ul></li></ol><hr><h3 id="编写补丁脚本"><a href="#编写补丁脚本" class="headerlink" title="编写补丁脚本"></a>编写补丁脚本</h3><p>以下是在microsim&#x2F;3rdparty&#x2F;scripts下的build-spdlog-linux-gcc-debug.sh的内容，执行该脚本，即可将spdlog-1.9.2.tar.gz先解压缩后install到lib下，然后再打上补丁。</p><p>注：spdlog-db.patch文件在3rdparty&#x2F;packages路径下</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">export COMPILER=gcc</span><br><span class="line">export OS=linux</span><br><span class="line">export BUILDTYPE=debug</span><br><span class="line">export BUILDTREE_DIR=&#x27;pwd&#x27;/../buildtree</span><br><span class="line">export NAME=&#x27;spdlog&#x27;</span><br><span class="line">export VERSION=&quot;$NAME&quot;</span><br><span class="line">export SPD_VERSION=&#x27;-1.9.2&#x27;</span><br><span class="line">export INSTALL_ROOT=$BUILDTREE_DIR/../../lib/$OS/$COMPILER/$BUILDTYPE</span><br><span class="line"></span><br><span class="line">rm -rf $BUILDTREE_DIR/$VERSION</span><br><span class="line">rm -rf $INSTALL_ROOT/$NAME</span><br><span class="line"></span><br><span class="line">tar -zxf $BUILDTREE_DIR/../packages/$VERSION$SPD_VERSION.tar.gz -C $BUILDTREE_DIR</span><br><span class="line"></span><br><span class="line">cd $BUILDTREE_DIR/$VERSION$SPD_VERSION</span><br><span class="line"></span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line"></span><br><span class="line">cmake -DCMAKE_BUILD_TYPE=$BUILDTYPE -DCMAKE_INSTALL_PREFIX=$INSTALL_ROOT/$NAME -DSPDLOG_B UILD_SHARED=1 ../</span><br><span class="line"></span><br><span class="line">VERBOSE=1 make -j 4</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">patch -p4 -d $INSTALL_ROOT/$NAME/include/spdlog/sinks &lt; $BUILDTREE_DIR/../packages/spdlog-db.patch</span><br><span class="line"></span><br><span class="line">rm -rf $BUILDTREE_DIR/$VERSION$SPD_VERSION</span><br></pre></td></tr></table></figure><p>大功告成。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;前情提要&quot;&gt;&lt;a href=&quot;#前情提要&quot; class=&quot;headerlink&quot; title=&quot;前情提要&quot;&gt;&lt;/a&gt;前情提要&lt;/h3&gt;&lt;p&gt;microsim项目中需要将硬件每一拍的运行日志数据保存下来，后续对其进行分析。使用的日志库是spdlog，版本是1.9.2</summary>
+      
+    
+    
+    
+    <category term="Technology" scheme="http://example.com/categories/Technology/"/>
+    
+    
+    <category term="Engineering" scheme="http://example.com/tags/Engineering/"/>
+    
+  </entry>
   
   <entry>
     <title>Training Day——练肩</title>
