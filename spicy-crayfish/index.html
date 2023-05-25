@@ -9,7 +9,7 @@
     
     <title>
         
-            Git——使用git向远端提交代码的流程 |
+            Spicy crayfish——麻辣小龙虾！ |
         
         Lucky Carp
     </title>
@@ -186,7 +186,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">Git——使用git向远端提交代码的流程</span>
+                <span class="title-hover-animation">Spicy crayfish——麻辣小龙虾！</span>
             </div>
 
             
@@ -208,13 +208,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-05-22 15:13:01</span>
-        <span class="mobile">2023-05-22 15:13</span>
+        <span class="pc">2023-05-25 17:16:57</span>
+        <span class="mobile">2023-05-25 17:16</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-05-22 18:28:50</span>
+        <span class="pc">2023-05-25 18:47:26</span>
     </span>
     
     
@@ -223,7 +223,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/Technology/">Technology</a>&nbsp;
+                        <a href="/categories/Life/">Life</a>&nbsp;
                     </li>
                 
             </ul>
@@ -235,7 +235,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Engineering/">Engineering</a>&nbsp;
+                        <a href="/tags/Cooking/">Cooking</a>&nbsp;
                     </li>
                 
             </ul>
@@ -245,12 +245,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>767 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -268,124 +268,52 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>在microsim项目中，是多人合作的，项目庞大，代码复杂，每个人负责自己开发的模块，因此需要进行分布式代码管理，使用的git仓库是小组内部的，与github无异，由远程仓库管理，各人在各自的分支上进行开发，然后合并到主分支。目前，我完成了日志写入模块的开发，需要把代码进行合并，因此对提交代码的流程进行记录，后续可按照该方式提交代码，在实践中，对git的理解也加深了！</p>
+                <p>这次练习做这个小龙虾可真是练到家了，5天做了三次！180只小龙虾！只能说手练腻了，胃还没有吃腻。</p>
+<p>5月17日，阿崽又来光顾我的寒舍了，这次她说要吃小龙虾，之前用专用的小龙虾调料做，口味太甜了，这次临时现学了一手麻辣小龙虾的做法，准备试试看。</p>
 <hr>
-<h3 id="git的简述"><a href="#git的简述" class="headerlink" title="git的简述"></a>git的简述</h3><h4 id="git的主要用途"><a href="#git的主要用途" class="headerlink" title="git的主要用途"></a>git的主要用途</h4><p>git 是一款开源的分布式版本控制系统，其在软件开发过程中有着很多优势，如：</p>
-<ol>
-<li>版本控制：Git 可以帮助开发人员追踪代码的变化，记录不同版本之间的差异，并能够在需要时恢复到任意一个历史版本。</li>
-<li>分支管理：Git 可以轻松创建和管理分支，开发人员可以在不影响主分支的同时，开展新的实验或开发新功能。</li>
-<li>团队协作：Git 提供了很多工具和指令，可协助团队协作开发，如合并、拉取、提交等操作。</li>
-<li>防止代码丢失：通过将代码存储在 Git 服务器上，可以避免因误操作或硬件损坏等原因导致代码丢失的风险。</li>
-</ol>
-<p>总的来说，使用 Git 管理代码可以有效地提高开发人员的工作效率，降低代码管理和协作时的风险，保证代码的可维护性和代码库的稳定性。</p>
-<h4 id="git的三种状态"><a href="#git的三种状态" class="headerlink" title="git的三种状态"></a>git的三种状态</h4><p>Git 有三种状态，你的文件可能处于其中之一：**已提交(committed)<strong>、</strong>已修改(modified)<strong>和</strong>已暂存(staged)**。 </p>
-<ul>
-<li>已提交表示数据已经安全的保存在本地数据库中。</li>
-<li>已修改表示修改了文件，但还没保存到数据库中。</li>
-<li>已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+<h3 id="食材和配料"><a href="#食材和配料" class="headerlink" title="食材和配料"></a>食材和配料</h3><ul>
+<li><strong>3斤小龙虾</strong>，先用清水清洗两遍，然后用刷子刷去虾身的泥土，再扯出虾线，并把虾头剪下来，虾开背方便入味（PS：可以从尾部把剪刀戳进去，更加方便）。</li>
+<li><strong>半个洋葱</strong>，洋葱可以增加麻辣小龙虾的辛辣味。切块。</li>
+<li><strong>一包小米辣</strong>，大概15根，可以根据个人口味调整，目前这个辣度刚好适合我跟阿崽的口味。切丁。</li>
+<li><strong>一个大蒜，一块生姜</strong>，可以多放一点大蒜，激发香味。切末。</li>
+<li><strong>一段大葱</strong>，增加香味。小葱切碎。</li>
+<li><strong>紫苏和香菜</strong></li>
+<li><strong>一瓶啤酒</strong>，330ml的。</li>
+<li><strong>海底捞牛油火锅底料</strong>，一整包刚刚好用来做3斤小龙虾。</li>
+<li>一根黄瓜，如果喜欢吃魔芋的可以来几块。切块。</li>
+<li>料酒&#x2F;黄酒、白糖、盐、香叶、桂皮、八角若干。</li>
 </ul>
-<p>由此引入 Git 项目的三个工作区域的概念：<strong>Git 仓库</strong>、<strong>工作目录</strong>以及<strong>暂存区域</strong>。工作目录、暂存区域以及 Git 仓库如下图所示：</p>
+<hr>
+<h3 id="开始做菜"><a href="#开始做菜" class="headerlink" title="开始做菜"></a>开始做菜</h3><ol>
+<li>首先把洗净的小龙虾放到盆中，倒出多余的水分，然后倒入料酒&#x2F;黄酒，撒上点少量的盐进行腌制，大概半个小时。</li>
+<li>锅中倒入大量的油，油温大概七成左右倒入龙虾，炸的时间可以稍微久一点，这样吃起来口感更佳，大概炸6分钟，如果虾太多，可以分批炸，炸好的龙虾捞出放在旁边。</li>
+<li>炸后的虾油不要倒掉，过滤出来。锅洗干净，倒入虾油，再倒入少量的油，总体油量也要多一点。油烧热后倒入准备好的洋葱、小米辣、大蒜、姜、大葱，炒出香味后，放入火锅底料，继续炒开融化。</li>
+<li>然后放入炸好的小龙虾，撒上少量的白糖，继续翻炒，让龙虾都被料汁浇透。</li>
+<li>倒入一罐啤酒，如果想要汤汁更多可以加入少量水，下入切好的黄瓜块，翻一下，如果觉得不够辣，可以再撒上点辣椒粉，开大火炖，大概5分钟。</li>
+<li>炖到剩一半汤汁了，转小火收汁，撒上紫苏叶、小葱花，翻个1分钟，就可以出锅了。</li>
+</ol>
+<p><strong>附加：</strong></p>
+<p>如果想吃龙虾面，也可以留点汤汁和几只小龙虾，然后下入方便面（要选好一点筋道的面），加点水煮五分钟，再下入两片芝士，汤汁稍微浓稠，美滋滋。</p>
+<hr>
+<h3 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h3><p>这样做出来的麻辣小龙虾简直比我在外面花两三百吃一盘的小龙虾还要好吃，也被阿崽夸夸了，以至于五天吃了三顿，吃完还想吃。话不多说，直接上图：</p>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230522/image.62g8kmo3k440.webp"
+                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230525/8cadcd1221a01e4d5fcb32342a1aa47.3pzrnj4x8l40.webp"
                      
                 ></p>
-<p><strong>Git 仓库目录</strong>是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
-<p><strong>工作目录</strong>是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
-<p><strong>暂存区域</strong>是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作‘索引’，不过一般说法还是叫暂存区域。</p>
-<p>基本的 Git 工作流程如下：</p>
-<ol>
-<li>在工作目录中修改文件。</li>
-<li>暂存文件，将文件的快照放入暂存区域。</li>
-<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
-</ol>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230522/image.5mblgannopc0.webp"
+                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230525/d01ce33a9028a894794e3425249e6d9.10v44bb3x3o0.webp"
                      
                 ></p>
-<p>如果 Git 目录中保存着的特定版本文件，就属于已提交状态。 如果作了修改并已放入暂存区域，就属于已暂存状态。 如果自上次取出后，作了修改但还没有放到暂存区域，就是已修改状态。 </p>
-<hr>
-<h3 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h3><p>下面是 Git 中常用的一些命令：</p>
-<ol>
-<li><code>git init</code>：初始化一个 Git 仓库。</li>
-<li><code>git add</code>：将文件添加到 Git 的暂存区。</li>
-<li><code>git commit</code>：将暂存区的文件提交到本地仓库。</li>
-<li><code>git clone</code>：将远程仓库克隆到本地电脑。</li>
-<li><code>git push</code>：将本地仓库的代码推送到远程仓库。</li>
-<li><code>git pull</code>：将远程仓库的最新代码拉取到本地电脑。</li>
-<li><code>git branch</code>：列出当前仓库中的所有分支。</li>
-<li><code>git checkout</code>：切换分支。</li>
-<li><code>git merge</code>：将一个分支合并到当前分支中。</li>
-<li><code>git status</code>：查看当前仓库的状态，列出未加入版本控制的文件和已修改的文件。</li>
-<li><code>git log</code>：查看提交历史记录。</li>
-<li><code>git rm</code>：将文件从 Git 仓库中删除。</li>
-<li><code>git stash</code>：将当前的代码修改暂存起来，以便来处理紧急任务。</li>
-<li><code>git rebase</code> ：用于将一个分支的修改内容应用到另一个分支上，或者修改当前分支中的提交历史。</li>
-</ol>
-<p>以上仅是 Git 中的部分常用命令。更多的git命令和配置选项可以查看<a class="link"   target="_blank" rel="noopener" href="https://www.yiibai.com/git/" >git教程<i class="fas fa-external-link-alt"></i></a>。</p>
-<hr>
-<h3 id="使用git向远程仓库提交代码的流程"><a href="#使用git向远程仓库提交代码的流程" class="headerlink" title="使用git向远程仓库提交代码的流程"></a>使用git向远程仓库提交代码的流程</h3><blockquote>
-<p>注：本节以microsim项目为案例进行说明。</p>
-</blockquote>
-<ol>
-<li><p>将本地修改提交到本地分支的暂存区。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add [file1] [file2]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>file1 和file2是本地修改过的文件或者是新建的文件</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;第一次提交&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>git commit -m可以对本次提交内容进行说明</li>
-</ul>
-</li>
-<li><p>向develop分支合入代码， 需要先将本地分支checkout到develop分支上，然后拉取远端代码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>切换到了develop分支下</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>git pull是将远程分支的修改合并到本地分支。<code>git pull --rebase</code>相当于 <code>git fetch</code> 命令和 <code>git rebase</code> 命令的组合。</li>
-<li>它与 <code>git pull</code> 命令的区别在于，<code>git pull</code> 命令相当于执行了 <code>git fetch</code> 和 <code>git merge</code> 两个命令，会将本地仓库和远程仓库合并下来。而 <code>git pull --rebase</code> 命令则是在将远程仓库的代码拉取到本地仓库之后，将当前本地分支和远程分支合并，以避免产生冗余的合并提交。</li>
-<li>使用 <code>git pull --rebase</code> 命令的好处是，将远程分支的代码同步到本地分支的时候，避免了出现由于本地分支和远程分支的历史分叉而产生的冲突，从而可以帮助我们更好地维护项目的代码库。</li>
-</ul>
-</li>
-<li><p>切换到个人的开发分支，并rebase到develop分支上</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev-liyang-feature-clickhouse</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>切换到我的开发分支dev-liyang-feature-clickhouse上。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase develop</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将当前分支变基到develop分支上，即将当前分支所在的提交修改为基于 <code>master</code> 分支上的最新提交，并将当前分支上所做的修改逐个应用到新的基础提交之上。</li>
-<li>在执行变基操作之前，git会先把当前分支提交保存一份，再将本地分支的提交内容同步到 <code>master</code> 分支最新提交，接着将本地分支的修改逐一以补丁文件（patch）的形式应用到 <code>master</code> 分支上。</li>
-<li>使用 <code>git rebase</code> 可以将分叉的提交历史整理成一条直线，以便更好地追溯提交历史和维护分支的合并历史，但是需要注意的是，使用 <code>git rebase</code> 有风险，因为修改提交历史可能会丢失部分提交。</li>
-</ul>
-</li>
-<li><p>如何<code>git rebase</code>产生冲突如何处理</p>
-<ul>
-<li><p>当本地分支的提交和目标分支（例如 <code>master</code> 分支）的提交有差异时，git无法确定要保留哪个提交，会导致git rebase中断，并提示未合并的路径，该路径下的文件就是存在冲突的文件，也可以使用<code>git status</code> 查看存在冲突的文件路径。</p>
-</li>
-<li><p>这时候需要手动解决中断，打开出现冲突的文件，手动编辑文件内容，消除冲突。编辑完成后，需要使用 <code>git add</code> 命令将修改内容添加到暂存区中。vscode提供了更方便的工具，点击未合并的路径会跳转到冲突文件，自己根据需要选择要合并的代码即可，注意记得重新add修改后的文件。</p>
-</li>
-<li><p>解决完冲突后，需要让rebase继续</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --continue</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>将个人分支推送到远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin dev-liyang-feature-clickhouse</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<p>以上操作即可将本地修改提交到远程的个人分支。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.staticaly.com/gh/lucky-carp/picx-images-hosting@master/20230525/bf8d4b48e85a9a089038ecd9edf92fe.2mv1kkhj6da0.webp"
+                     
+                ></p>
 
             </div>
 
@@ -395,16 +323,16 @@
 <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li class="post-title">
-            <span class="type">Post title</span>: <span class="content">Git——使用git向远端提交代码的流程</span>
+            <span class="type">Post title</span>: <span class="content">Spicy crayfish——麻辣小龙虾！</span>
         </li>
         <li class="post-author">
             <span class="type">Post author</span>: <span class="content">Yang Li</span>
         </li>
         <li class="post-time">
-            <span class="type">Create time</span>: <span class="content">2023-05-22 15:13:01</span>
+            <span class="type">Create time</span>: <span class="content">2023-05-25 17:16:57</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>: <span class="content">submitcode-bygit/</span>
+            <span class="type">Post link</span>: <span class="content">spicy-crayfish/</span>
         </li>
         <li class="post-license">
             <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -422,7 +350,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/Engineering/">#Engineering</a>&nbsp;
+                            <a href="/tags/Cooking/">#Cooking</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -431,29 +359,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/spicy-crayfish/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">Spicy crayfish——麻辣小龙虾！</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/diffpatch/"
+                               href="/submitcode-bygit/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">如何应用对第三方库的改动？</span>
+                                <span class="post-nav-title-item">Git——使用git向远端提交代码的流程</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -558,7 +471,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">前情提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E7%9A%84%E7%AE%80%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">git的简述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git%E7%9A%84%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94"><span class="nav-number">2.1.</span> <span class="nav-text">git的主要用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git%E7%9A%84%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-number">2.2.</span> <span class="nav-text">git的三种状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">Git常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8git%E5%90%91%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">使用git向远程仓库提交代码的流程</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A3%9F%E6%9D%90%E5%92%8C%E9%85%8D%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">食材和配料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%81%9A%E8%8F%9C"><span class="nav-number">2.</span> <span class="nav-text">开始做菜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">成果展示</span></a></li></ol>
     </div>
 </div>
 
